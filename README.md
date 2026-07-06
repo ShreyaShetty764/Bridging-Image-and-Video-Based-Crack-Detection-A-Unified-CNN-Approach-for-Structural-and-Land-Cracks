@@ -1,42 +1,52 @@
 # Bridging-Image-and-Video-Based-Crack-Detection-A-Unified-CNN-Approach-for-Structural-and-Land-Cracks
 A unified deep learning system for detecting and analyzing cracks in both structural surfaces (via video) and land/soil (via image), built using a custom-trained CNN model. Deployed as a real-time Streamlit web application with automated severity classification, depth estimation, and report generation.
 
-## 📌 Project Overview
+---
 
-Manual crack inspection is often time-consuming, expensive, and prone to human error. This project automates the crack inspection process by combining computer vision and deep learning into a single application capable of analyzing both structural and land cracks.
+# 📌 Project Overview
 
-### Features
+Manual crack inspection is often time-consuming, labor-intensive, and prone to human error. This project automates the inspection process by combining deep learning and computer vision into a unified system capable of analyzing both structural and land cracks.
 
-- Detect structural cracks from uploaded videos
-- Detect land/soil cracks from uploaded images
-- Estimate crack width and depth
-- Classify crack severity (Minor, Moderate, Severe)
-- Generate annotated outputs
-- Download PDF and CSV reports
-- Real-time Streamlit web application
+The application allows users to upload either a structural inspection video or a land crack image. The trained CNN model detects cracks, estimates crack dimensions, classifies severity, and generates annotated outputs along with downloadable reports.
 
 ---
 
-## 🛠️ Tech Stack
+# ✨ Features
+
+- 🎥 Structural crack detection from videos
+- 🖼️ Land/soil crack detection from images
+- 🧠 Custom CNN-based crack classification
+- 📏 Crack width estimation
+- 📐 Crack depth estimation
+- 🚨 Severity classification (Minor, Moderate, Severe)
+- 📊 Confidence score prediction
+- 📈 Depth vs Frame visualization
+- 📄 Automatic PDF report generation
+- 📁 CSV export of crack analysis
+- 🌐 Interactive Streamlit web application
+
+---
+
+# 🛠️ Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
 | Python | Programming Language |
 | TensorFlow | Deep Learning Framework |
-| Keras | CNN Model |
+| Keras | CNN Model Development |
 | OpenCV | Image & Video Processing |
 | Streamlit | Web Application |
-| NumPy | Numerical Computation |
+| NumPy | Numerical Computing |
 | Pandas | Data Processing |
-| Matplotlib | Visualization |
+| Matplotlib | Data Visualization |
 | ReportLab | PDF Report Generation |
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```text
-ML-Based-Structural-and-Land-Crack-Detection/
+Bridging-Image-and-Video-Based-Crack-Detection-A-Unified-CNN-Approach-for-Structural-and-Land-Cracks/
 │
 ├── appi.py
 ├── combinemodel.ipynb
@@ -47,14 +57,7 @@ ML-Based-Structural-and-Land-Crack-Detection/
 │
 ├── Test/
 │   ├── Images/
-│   │   ├── image1.jpg
-│   │   ├── image2.jpg
-│   │   └── image3.png
-│   │
 │   └── Videos/
-│       ├── video1.mp4
-│       ├── video2.mp4
-│       └── video3.avi
 │
 ├── Outputs/
 │   ├── Annotated_Images/
@@ -66,104 +69,95 @@ ML-Based-Structural-and-Land-Crack-Detection/
     ├── Home.png
     ├── Structural_Crack.png
     ├── Land_Crack.png
-    ├── Report.png
-    └── Dashboard.png
+    ├── Dashboard.png
+    └── Report.png
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/ML-Based-Structural-and-Land-Crack-Detection.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/Bridging-Image-and-Video-Based-Crack-Detection-A-Unified-CNN-Approach-for-Structural-and-Land-Cracks.git
 ```
 
-Move into the project folder
+Navigate to the project directory
 
 ```bash
-cd ML-Based-Structural-and-Land-Crack-Detection
+cd Bridging-Image-and-Video-Based-Crack-Detection-A-Unified-CNN-Approach-for-Structural-and-Land-Cracks
 ```
 
-Install the required packages
+Install the required dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Or install manually
-
-```bash
-pip install streamlit tensorflow keras opencv-python numpy pandas matplotlib reportlab
-```
-
 ---
 
-## ▶️ Running the Application
+# ▶️ Running the Application
 
-Ensure the trained model
+Ensure the trained CNN model
 
 ```
 best_crack_detector.keras
 ```
 
-is present in the project directory.
+is available in the project directory.
 
-Run the application
+Launch the Streamlit application
 
 ```bash
 streamlit run appi.py
 ```
 
-The Streamlit application will automatically open in your default browser.
+The application will automatically open in your default web browser.
 
 ---
 
-## 🖥️ Application Workflow
+# 🖥️ Application Workflow
 
-### Structural Crack Detection (Video)
+## Structural Crack Detection
 
 1. Upload a structural inspection video.
 2. Extract frames using OpenCV.
 3. Preprocess each frame.
-4. Pass every frame through the trained CNN.
-5. Detect cracks.
+4. Predict crack presence using the CNN model.
+5. Detect crack boundaries.
 6. Estimate crack width.
 7. Estimate crack depth.
-8. Classify severity.
+8. Classify crack severity.
 9. Generate annotated output video.
-10. Export CSV and PDF reports.
+10. Export PDF and CSV reports.
 
 ---
 
-### Land Crack Detection (Image)
+## Land Crack Detection
 
-1. Upload an image.
-2. Preprocess image.
-3. CNN predicts crack/no crack.
-4. Detect crack contour.
+1. Upload a land/soil crack image.
+2. Preprocess the image.
+3. Predict crack presence using the CNN model.
+4. Detect crack contours.
 5. Estimate crack width.
 6. Estimate crack depth.
-7. Classify severity.
+7. Classify crack severity.
 8. Generate annotated output image.
-9. Export report.
+9. Export analysis reports.
 
 ---
 
-## 🔄 Detection Pipeline
+# 🔄 Detection Pipeline
 
-```
+```text
 Input Image / Video
         │
         ▼
 Image Preprocessing
         │
         ▼
-Resize (224 × 224)
-        │
-        ▼
-Normalization
+Resize & Normalize
         │
         ▼
 CNN Prediction
@@ -190,52 +184,44 @@ Severity Classification
 Annotated Output
         │
         ▼
-CSV & PDF Report Generation
+PDF & CSV Report Generation
 ```
 
 ---
 
-## 📊 Outputs
-
-The application generates
-
-- Annotated crack image
-- Annotated crack video
-- Crack width
-- Estimated crack depth
-- Confidence score
-- Severity classification
-- Depth vs Frame graph
-- CSV report
-- PDF report
-
----
-
-## 📈 Model Performance
+# 📊 Model Performance
 
 | Metric | Value |
 |---------|-------|
 | Model | Custom CNN |
-| Accuracy | **94%** |
+| Classification Accuracy | **94%** |
 | Framework | TensorFlow & Keras |
-| Supported Inputs | Images & Videos |
+| Input Types | Images & Videos |
 | Deployment | Streamlit |
 
 ---
 
-## 📊 Crack Severity Classification
+# 📊 Outputs
 
-| Crack Width | Severity |
-|-------------|----------|
-| < 1 mm | Minor |
-| 1 – 3 mm | Moderate |
-| > 3 mm | Severe |
+The application provides:
+
+- ✅ Annotated crack images
+- ✅ Annotated crack videos
+- ✅ Crack width estimation
+- ✅ Crack depth estimation
+- ✅ Severity classification
+- ✅ Confidence score
+- ✅ Depth vs Frame graph
+- ✅ CSV report
+- ✅ PDF report
 
 ---
 
-## 📷 Screenshots
+# 📷 Application Screenshots
 
-Add your screenshots inside the **Screenshots** folder.
+Add your screenshots inside the `Screenshots` folder.
+
+Example:
 
 ```
 Screenshots/
@@ -249,33 +235,30 @@ Screenshots/
 
 ---
 
-## 🚀 Future Enhancements
+# 🚀 Future Enhancements
 
-- Real-time CCTV crack monitoring
-- Drone-based crack inspection
+- Real-time CCTV-based crack monitoring
+- Drone-assisted infrastructure inspection
 - Crack segmentation using U-Net
-- Mobile application
-- Cloud deployment
-- Automatic maintenance recommendation system
+- Mobile application deployment
+- Cloud deployment using Streamlit Cloud
+- Predictive maintenance recommendation system
 
 ---
 
-## 💡 Key Features
+# 💡 Key Highlights
 
-- Unified CNN model for structural and land crack detection
-- Image and video processing support
-- Automatic crack width estimation
-- Automatic crack depth estimation
+- Unified CNN model for both structural and land crack detection
+- Supports both images and videos
+- Automated crack width and depth estimation
 - Severity classification
-- Annotated outputs
-- Downloadable PDF reports
-- CSV export
-- Interactive Streamlit interface
-- IEEE Conference Publication
+- End-to-end Streamlit deployment
+- Downloadable PDF and CSV reports
+- Research work accepted at IEEE CCIC 2026
 
 ---
 
-## 📦 Requirements
+# 📦 Requirements
 
 ```
 streamlit
@@ -285,10 +268,12 @@ opencv-python
 numpy
 pandas
 matplotlib
+Pillow
 reportlab
+scikit-learn
 ```
 
-Install using
+Install all dependencies using
 
 ```bash
 pip install -r requirements.txt
@@ -296,15 +281,15 @@ pip install -r requirements.txt
 
 ---
 
-## 🧠 Skills Demonstrated
+# 🧠 Skills Demonstrated
 
 - Deep Learning
 - Convolutional Neural Networks (CNN)
 - Computer Vision
-- Image Processing
-- OpenCV
 - TensorFlow
 - Keras
+- OpenCV
+- Image Processing
 - Streamlit
 - Python
 - Data Visualization
@@ -312,19 +297,11 @@ pip install -r requirements.txt
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
 **Shreya Shetty**
 
 BE Computer Science Engineering  
 Canara Engineering College, Mangalore
 
-**GitHub:** https://github.com/yourusername
-
-**LinkedIn:** https://linkedin.com/in/your-profile
-
-**Email:** your-email@example.com
-
----
-
-## ⭐ If you found this project useful, don't forget to give it a Star!
+## ⭐ If you found this project helpful, consider giving it a Star!
