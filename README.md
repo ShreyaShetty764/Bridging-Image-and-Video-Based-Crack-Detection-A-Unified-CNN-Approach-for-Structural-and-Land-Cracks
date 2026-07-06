@@ -1,0 +1,2 @@
+# Bridging-Image-and-Video-Based-Crack-Detection-A-Unified-CNN-Approach-for-Structural-and-Land-Cracks
+A unified deep learning system for detecting and analyzing cracks in both structural surfaces (via video) and land/soil (via image), built using a custom-trained CNN model. Deployed as a real-time Streamlit web application with automated severity classification, depth estimation, and report generation.
